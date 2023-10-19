@@ -8,4 +8,7 @@ class Restaurant < ApplicationRecord
   has_many :addresses, as: :addressable
   has_many :food_items
 
+  has_one :image, as: :imageable	
+
+
 end

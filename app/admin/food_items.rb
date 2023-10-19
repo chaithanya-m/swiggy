@@ -14,5 +14,16 @@ ActiveAdmin.register FoodItem do
   #   permitted << :other if params[:action] == 'create' && current_user.admin?
   #   permitted
   # end
+
+  form do |f|
+    f.inputs 'Food Item Details' do
+      f.input :name
+      f.input :description
+      f.input :price
+      f.input :type
+      f.input :image, as: :file
+    end
+    f.actions
+  end
   
 end
