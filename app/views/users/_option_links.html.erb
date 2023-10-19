@@ -2,7 +2,7 @@
 	 <ul>
         <li>
         	<div>
-        		<%= link_to "Orders", root_path %>
+        		<%= link_to "Orders", root_path ,class:"option" %>
         	</div>
         </li>
         <li>
@@ -22,7 +22,9 @@
         </li>
         <li>
         	<div>
-        		<span>Addresses</span>
+        		<span>
+							<%= link_to "Addresses", user_addresses_path(current_user) ,class:"option" %>
+						</span>
         	</div>
         </li>
         <li>

@@ -10,3 +10,8 @@ ul{
 li{
 	padding: 10px;
 }
+.option{
+	text-decoration: none;
+	color: black;
+	text-align: center;
+}

@@ -1,0 +1,27 @@
+<!-- app/views/users/show.html.erb -->
+
+<h1>User Profile</h1>
+<p><strong>Name:</strong> <%= current_user.name %></p>
+<p><strong>Email:</strong> <%= current_user.email %></p>
+
+<h2>Addresses</h2>
+<% if current_user.addresses.any? %>
+  <ul>
+    <% @addresses.each do |address| %>
+      <li>
+        <strong>Door.no</strong> <%= address.door_number%><br>
+        <strong>Street:</strong> <%= address.street_area %><br>
+        <strong>City:</strong> <%= address.city %><br>
+        <strong>State:</strong> <%= address.state %><br>
+        <strong>Zipcode:</strong> <%= address.zipcode %>
+      </li>
+      <%= link_to 'Delete', user_address_path(current_user, address), data: { turbo_method: :delete }%>
+      <%= link_to 'Edit ', edit_user_address_path(current_user, address) %>
+    <% end %>
+  </ul>
+<% else %>
+  <p>No addresses found for this user.</p>
+<% end %>
+<%= link_to 'add new address', new_user_address_path(current_user) %>
+
+<%= link_to 'Edit Profile', edit_user_path(current_user) %>

@@ -10,5 +10,8 @@ Rails.application.routes.draw do
   devise_scope :user do
     get "user/profile" => "users#profile",as: "profile_user"
   end
+  resources :users do
+    resources :addresses
+  end
 
 end
