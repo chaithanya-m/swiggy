@@ -6,5 +6,6 @@ class Restaurant < ApplicationRecord
     ["addresses"]
   end
   has_many :addresses, as: :addressable
+  has_many :food_items
 
 end
