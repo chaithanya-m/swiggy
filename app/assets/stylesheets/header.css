@@ -1,0 +1,111 @@
+.header_around {
+  padding-left: 60px;
+	padding-top: 15px;
+  padding-bottom: 15px;
+	position: relative;
+	text-align: center;
+	box-shadow: 0 15px 40px -20px rgba(40,44,63,.15);
+  font-family: ProximaNova,arial,Helvetica Neue,sans-serif;
+
+}
+
+.header_left{
+  padding-left: 15px;
+}
+.logo{
+  text-align: right;
+}
+.location{
+  padding-right: 100px;
+	text-align: left;
+	margin-top: 10px;
+	padding-top: 10px;
+  position: relative;
+  padding-left: 30px;
+
+}
+.location:hover {
+  cursor: pointer;
+}
+.location:hover .area {
+  color: orange;
+}
+ .search:hover ._3yZyp ._1GTCc path{
+  fill:orange; /* Change the fill color to red (#FF0000) */
+}
+.offers:hover ._3yZyp ._1GTCc path{
+  fill:orange;/* Change the fill color to red (#FF0000) */
+}
+.help:hover ._3yZyp ._1GTCc path{
+  fill:orange; /* Change the fill color to red (#FF0000) */
+}
+.sign_in:hover ._3yZyp ._1GTCc path{
+  fill:orange; /* Change the fill color to red (#FF0000) */
+}
+
+.area:hover, .search:hover, .offers:hover, .help:hover , .sign_in:hover,.a_tag:hover,.cart:hover{
+  color: orange;
+  cursor: pointer;
+
+}
+.area{
+  font-size: 14px;
+  color: #3d4152;
+  float: left;
+  font-weight: bold;
+  border-bottom: solid;
+}
+
+.address{
+  padding-right: 40px;
+  padding-left: 10px;
+  font-weight: 500;
+  font-size: 15px;
+  display: block;
+  color: #686b78;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+ 
+}
+.down_arrow{
+  font-size: 14px;
+  /* font-weight: 700; */
+  color: #3d4152;
+  float: left;
+  padding: 5px;
+  font-weight: bold;
+  text-decoration: underline;
+}
+._3yZyp ._1GTCc path{
+  fill:black;
+  padding: 20px;/* Change the fill color to red (#FF0000) */
+}
+.header_list{
+	padding-top: 15px;
+  font-size: 14px;
+  font-weight: bold;
+
+}
+
+.a_tag {
+	color: inherit;
+  text-decoration: none;
+}
+.a_tag:hover{
+  color: orange;
+}
+._2vS77 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  font-size: 14px;
+  font-weight: 600;
+}
+._2MSid {
+  fill: #fff;
+  stroke-width: 2px;
+  stroke: #282c3f;
+}

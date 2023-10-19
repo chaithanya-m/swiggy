@@ -1,0 +1,34 @@
+<%= render 'homes/header' %>
+<div class="profile_body">
+	<div>
+		<div class="row">
+			<div class="col-12">
+				<div class="row user_details">
+					<div class="col-6">
+						<h1><%= current_user.name %> </h1>
+						<div>
+							<span><%= current_user.phone_number %></span>.<span><%= current_user.email %></span>
+						</div>
+					</div>
+					<div class="col-6 user_details_left">
+						<button>
+							<%= link_to "EDIT PROFILE",edit_user_registration_path %>
+						</button>
+					</div>
+					
+				</div>
+				<div>
+					<div class="row user_options">
+						<div class="col-sm-3 user_options_list ">
+							<%= render 'users/option_links' %>
+						</div>
+						<div class="col-sm-9 user_options_list">sdfd</div>
+						
+						
+					</div>
+				</div>
+			</div>
+			
+		</div>
+	</div>	
+</div> 
