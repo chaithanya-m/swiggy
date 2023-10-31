@@ -13,5 +13,13 @@ Rails.application.routes.draw do
   resources :users do
     resources :addresses
   end
+  resources :restaurants
+
+  resources :cart_items do
+    member do 
+      post :increment
+      post :decrement
+    end
+  end
 
 end

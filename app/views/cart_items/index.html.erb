@@ -1,0 +1,15 @@
+<%= render 'homes/header' %>
+
+<% if @cart_items.empty? %>
+	<div><h2>Cart is Empty</h2></div>
+<% else %>
+<div class="row" >
+	<div class="col-8">
+		<%= render 'cart_items/address',addresses: @addresses %>
+	</div>
+	<div class="col-4">
+		<%= render 'cart_items/order_detailes', cart_items: @cart_items %>
+	</div>
+</div>
+<% end %>
+

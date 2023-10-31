@@ -1,0 +1,48 @@
+<%= render 'homes/header' %>
+<div class="main_body">
+	<div class="restaurant">
+		<div class="row">
+			<div class="col-8">
+				<h3><%= @restaurant.name %></h3>
+			</div>
+			<div>
+				<%= @restaurant.spaciality %><br>
+				<%= @restaurant.area %>
+			</div>
+		</div>
+	</div>
+	<div class="food_items">
+		<% @food_items.each do |item| %>
+		<div class="row">
+			<div class="col-12">
+				<h3><%= item.name %></h3>
+				<h4>Rs. <%= item.price %> </h4>
+				<%= item .description %> 
+			</div>
+		</div>
+		<div>
+			<% if @cart_food_item_ids.nil? || @cart_food_item_ids.empty?%>
+				<div>
+					<%= link_to "Add to cart", 'http://localhost:3000/cart_items?'+{item_id:item.id}.to_param, data:{ "turbo-method": :post }  %>
+				</div>
+			<% elsif @cart_food_item_ids.include?(item.id) %>
+				<div class="row">
+					<div class="col-1">
+						<%= link_to "-", decrement_cart_item_path(item.id), :class => "button",data: { "turbo-method": :post }  %>
+					</div>
+					<div class="col-1">
+						<%= CartItem.find_by(cart_id: current_user.cart.id,food_item_id: item.id).quantity %>
+					</div>
+					<div class="col-1">
+						<%= link_to "+", increment_cart_item_path(item.id), :class => "button",data: { "turbo-method": :post }  %>
+					</div>
+				</div>
+			<% else %>
+				<div>
+					<%= link_to "Add to cart", 'http://localhost:3000/cart_items?'+{item_id:item.id}.to_param, data:{ "turbo-method": :post }  %>
+				</div>
+			<% end %>
+		</div>
+		<% end %>
+	</div>
+</div>

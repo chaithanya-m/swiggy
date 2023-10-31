@@ -2,6 +2,7 @@ class AddressesController < ApplicationController
   def index
     @addresses= current_user.addresses
   end
+
   def new
     @address=current_user.addresses.new
   end
@@ -15,6 +16,7 @@ class AddressesController < ApplicationController
       render :new
     end
   end
+  
   def edit 
     @user = current_user # Assuming you have a `current_user` method
     @address = @user.addresses.find(params[:id])
