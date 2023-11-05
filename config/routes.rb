@@ -21,5 +21,10 @@ Rails.application.routes.draw do
       post :decrement
     end
   end
+  resources :orders do
+  end
+  resources :order_items do
+  end
+
 
 end

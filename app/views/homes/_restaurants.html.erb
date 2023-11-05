@@ -1,41 +1,21 @@
 <div class="main_body">
+  <h4>Categories</h4>
   <div class="horizontal-scroll">
     <% categories.each do |category| %>
       <div class="scroll-content"><%= category.name %></div>
     <% end %>
-      <div class="scroll-content">Item 2</div>
-      <div class="scroll-content">Item 3</div>
-      <div class="scroll-content">Item 4</div>
-      <div class="scroll-content">Item 5</div>
-      <div class="scroll-content">Item 1</div>
-      <div class="scroll-content">Item 2</div>
-      <div class="scroll-content">Item 3</div>
-      <div class="scroll-content">Item 4</div>
-      <div class="scroll-content">Item 5</div>
-      <div class="scroll-content">Item 1</div>
-      <div class="scroll-content">Item 2</div>
-      <div class="scroll-content">Item 3</div>
-      <div class="scroll-content">Item 4</div>
-      <div class="scroll-content">Item 5</div>
-      <div class="scroll-content">Item 1</div>
-      <div class="scroll-content">Item 2</div>
-      <div class="scroll-content">Item 3</div>
-      <div class="scroll-content">Item 4</div>
-      <div class="scroll-content">Item 5</div>
-      <!-- Add more items here as needed -->
   </div>
   <div>
+  <h4> Restaurants</h4>
   	<div class="row">
   		<% restaurants.each do |restaurant| %> 
   		<div class="col-4 ">
       <%= link_to restaurant_path(restaurant), :action => 'go' do %>
-
   			<b><%= restaurant.name %></b><br>
   			<%= restaurant.spaciality %><br>
   			<%= restaurant.area %>
         <% end %>
   		</div>
-  	</a>
   		<% end %>
   	</div>
   </div>

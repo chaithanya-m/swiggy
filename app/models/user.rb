@@ -15,6 +15,7 @@ class User < ApplicationRecord
   has_many :addresses, as: :addressable
 
   has_one :cart
+  has_many :orders
 
       
 end

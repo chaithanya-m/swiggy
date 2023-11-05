@@ -5,10 +5,58 @@
 <% else %>
 <div class="row" >
 	<div class="col-8">
-		<%= render 'cart_items/address',addresses: @addresses %>
+		<h1>Select Addresses</h1>
+		<%= form_tag order_items_path, method: :post do %>
+			<% @addresses.each do |address| %>
+				<label>
+					<%= check_box_tag 'selected_address_id', address[:id] %>
+					<%= "#{address[:door_number]}, #{address[:street_area]}, #{address[:city]}, #{address[:state]}, #{address[:zipcode]}" %>
+				</label>
+				<%= link_to 'Edit ', edit_user_address_path(current_user, address) %><br>
+				<br>
+			<% end %>
+		
+			<%= submit_tag "Place Order" %>
+		<% end %>
+		            
+
+  		<br>
+  	<%= link_to 'add new address', new_user_address_path(current_user) %>
 	</div>
 	<div class="col-4">
-		<%= render 'cart_items/order_detailes', cart_items: @cart_items %>
+		<div>
+			<% total = 0%>
+			<big><%= @cart_items.first.food_item.restaurant.name %> </big><br>
+			<small><%= @cart_items.first.food_item.restaurant.area %> </small>
+			<div>
+				<% @cart_items.each do |cart_item| %>
+					<div class="row">
+						<div class="col-6"> <%= cart_item.food_item.name %></div>
+						<div class="col-1">
+							<%= link_to "-", decrement_cart_item_path(cart_item.food_item.id), :class => "button",data: { "turbo-method": :post }  %>
+						</div>
+						<div class="col-1"><%= cart_item.quantity %></div>
+						<div class="col-1">
+							<%= link_to "+", increment_cart_item_path(cart_item.food_item.id), :class => "button",data: { "turbo-method": :post }  %>
+						</div>
+						<div class="col-3"> Rs.<%= cart_item.quantity.to_i * cart_item.food_item.price.to_i %></div>
+					</div>
+					<% total = total.to_i + cart_item.quantity.to_i * cart_item.food_item.price.to_i %>
+				<% end %>
+			</div>
+			<div>
+				<h3>billing</h3>
+				<div class="row">
+					<div class="col-8">
+						<p>Total prize </p>
+					</div>
+					<div class="col-4">Rs. <%= total %></div>
+				</div>
+				<div>
+
+				</div>
+			</div>
+		</div>
 	</div>
 </div>
 <% end %>

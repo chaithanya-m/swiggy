@@ -1,0 +1,39 @@
+<%= render 'homes/header' %>
+
+<div>
+	<h2>Ordered products</h2>
+	
+	<div>
+		<table class="table">
+			<tr>
+				<th scope="col">order id</th>
+				<th scope="col">total products</th>
+				<th scope="col">total price</th>
+				<th scope="col">check order</th>
+        <th scope="col">address </th>
+				<th scope="col">cancel order</th>
+				
+			</tr>
+			<% @orders.each do |order| %>
+			<tr>
+				<td> <%= order.id  %></td>
+				<td> <%= order.total_items %></td>
+				<td> Rs.<%= order.total_price %></td>
+				<td> <%= link_to "check order", order_path(id:order.id) %></td>
+        <td> 
+          <%= order.address.door_number %> <br>
+          <%= order.address.street_area %> <br>
+          <%= order.address.city %> <br>
+          <%= order.address.state %> <br>
+          <%= order.address.zipcode %> <br>
+        </td>
+				<td> <%= link_to "cancel order", order_path(id:order.id), data: { "turbo-method": :delete }  %></td>
+
+			</tr>
+			<% end %>
+			
+
+		</table>
+		<%= link_to "back", profile_user_path %>
+	</div>
+</div>

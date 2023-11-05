@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_10_31_064428) do
+ActiveRecord::Schema[7.0].define(version: 2023_10_31_115522) do
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
     t.text "body"
@@ -123,6 +123,29 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_31_064428) do
     t.index ["Imageable_type", "Imageable_id"], name: "index_images_on_Imageable"
   end
 
+  create_table "order_items", force: :cascade do |t|
+    t.integer "order_id", null: false
+    t.integer "food_item_id", null: false
+    t.decimal "item_price", default: "0.0"
+    t.integer "quantity", default: 0
+    t.decimal "item_total_price", default: "0.0"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["food_item_id"], name: "index_order_items_on_food_item_id"
+    t.index ["order_id"], name: "index_order_items_on_order_id"
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "address_id", null: false
+    t.decimal "total_price", default: "0.0"
+    t.integer "total_items", default: 0
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["address_id"], name: "index_orders_on_address_id"
+    t.index ["user_id"], name: "index_orders_on_user_id"
+  end
+
   create_table "restaurants", force: :cascade do |t|
     t.string "name"
     t.string "spaciality"
@@ -152,4 +175,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_31_064428) do
   add_foreign_key "carts", "users"
   add_foreign_key "food_items", "categories"
   add_foreign_key "food_items", "restaurants"
+  add_foreign_key "order_items", "food_items"
+  add_foreign_key "order_items", "orders"
+  add_foreign_key "orders", "addresses"
+  add_foreign_key "orders", "users"
 end

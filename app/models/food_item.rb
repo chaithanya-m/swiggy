@@ -9,5 +9,6 @@ class FoodItem < ApplicationRecord
   def self.ransackable_associations(auth_object = nil)
     ["cart_items", "category", "restaurant"]
   end
+  has_many :order_items
 
 end
