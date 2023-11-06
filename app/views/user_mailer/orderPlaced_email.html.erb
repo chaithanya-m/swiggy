@@ -1,0 +1,27 @@
+
+
+<div>
+	<p> your order id is place</p>
+	<p> here is the order details</p>
+	<div>
+		<table class="table">
+			<tr>
+				<th scope="col">order id</th>
+				<th scope="col">total products</th>
+				<th scope="col">total price</th>
+			</tr>
+			
+			<tr>
+				<td> <%= @order.id %></td>
+				<td> <%= @order.total_items %></td>
+				<td> Rs.<%= @order.total_price %></td>
+				
+
+			</tr>
+			<% link_to "chech all ordes" , @url %>
+
+		</table>
+	</div>
+	<p></p>
+
+</div>

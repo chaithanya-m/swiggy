@@ -22,6 +22,7 @@ class OrderItemsController < ApplicationController
       if @order.save 
       @cart_items.destroy_all
       end
+      UserMailer.with(order: @order ).orderPlaced_email.deliver_later
         redirect_to orders_path
     end
   end
