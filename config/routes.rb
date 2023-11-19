@@ -5,8 +5,14 @@ Rails.application.routes.draw do
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
-  # root "articles#index"
   root "homes#index"
+  resources :homes, only: [:index] do
+    collection do
+      get 'filter'
+      get 'select_location'
+    end
+  end
+
   devise_scope :user do
     get "user/profile" => "users#profile",as: "profile_user"
   end

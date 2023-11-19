@@ -7,4 +7,5 @@ class AdminUser < ApplicationRecord
   def self.ransackable_attributes(auth_object = nil)
     %w[id email created_at updated_at]  # Add the attributes you want to make searchable
   end
+  
 end

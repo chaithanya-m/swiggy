@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_10_31_115522) do
+ActiveRecord::Schema[7.0].define(version: 2023_11_09_154705) do
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
     t.text "body"
@@ -114,15 +114,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_31_115522) do
     t.index ["restaurant_id"], name: "index_food_items_on_restaurant_id"
   end
 
-  create_table "images", force: :cascade do |t|
-    t.string "image"
-    t.string "Imageable_type", null: false
-    t.integer "Imageable_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["Imageable_type", "Imageable_id"], name: "index_images_on_Imageable"
-  end
-
   create_table "order_items", force: :cascade do |t|
     t.integer "order_id", null: false
     t.integer "food_item_id", null: false
@@ -144,6 +135,15 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_31_115522) do
     t.datetime "updated_at", null: false
     t.index ["address_id"], name: "index_orders_on_address_id"
     t.index ["user_id"], name: "index_orders_on_user_id"
+  end
+
+  create_table "pictures", force: :cascade do |t|
+    t.string "image"
+    t.bigint "imageable_id"
+    t.string "imageable_type"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["imageable_type", "imageable_id"], name: "index_pictures_on_imageable_type_and_imageable_id"
   end
 
   create_table "restaurants", force: :cascade do |t|

@@ -1,4 +1,6 @@
 ActiveAdmin.register FoodItem do
+  remove_filter :order_items ,:picture
+  # remove_filter :pictures
 
   # See permitted parameters documentation:
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters

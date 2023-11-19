@@ -24,6 +24,35 @@
   padding-left: 30px;
 
 }
+
+
+.custom-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.custom-dropdown select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  background-color: white;
+}
+.custom-dropdown :hover{
+  color: orange;
+}
+.custom-dropdown::before {
+  content: '\25BC'; /* Unicode character for a down arrow */
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: orange;
+}
 .location:hover {
   cursor: pointer;
 }
@@ -43,7 +72,7 @@
   fill:orange; /* Change the fill color to red (#FF0000) */
 }
 
-.area:hover, .search:hover, .offers:hover, .help:hover , .sign_in:hover,.a_tag:hover,.cart:hover{
+.area:hover, .search:hover, .offers:hover, .help:hover , .sign_in:hover,.a_tag:hover{
   color: orange;
   cursor: pointer;
 

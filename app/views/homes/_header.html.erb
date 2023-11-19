@@ -12,9 +12,12 @@
 					</svg>
 				</a>
 				</div>
-				<div class="col-sm-4 location" >
-					<span class="area	">Marathahalli</span>
-					<span class="address"> Marathahalli Village, Marathahalli, Bengaluru, Karnataka 56003</span>
+				<div class="col-sm-4 location custom-dropdown" >
+				<% locations = Address.where(addressable_type: 'Restaurant').pluck(:street_area).uniq %>
+				<%= form_tag({ controller: "homes", action: "select_location" }, method: "get", id: "location-form") do %>
+					<%= select_tag 'selected_location', options_for_select(locations,session[:location]), onchange: 'document.getElementById("location-form").submit();' %>
+				<% end %>
+					
 				</div>
 				<div class="col-sm-7">
 					<div class="row">

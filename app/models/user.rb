@@ -3,6 +3,10 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable  
+  
+  has_many :addresses, as: :addressable
+  has_one  :cart
+  has_many :orders
          
          
   def self.ransackable_attributes(auth_object = nil)
@@ -12,10 +16,7 @@ class User < ApplicationRecord
     ["addresses"]
   end
 
-  has_many :addresses, as: :addressable
-
-  has_one :cart
-  has_many :orders
+  
 
       
 end
