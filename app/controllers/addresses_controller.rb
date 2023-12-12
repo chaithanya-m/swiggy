@@ -7,7 +7,7 @@ class AddressesController < ApplicationController
     @address=current_user.addresses.new
   end
   def create
-    @user = current_user  # Assuming you have a `current_user` method available
+    @user = current_user  
     @address = @user.addresses.new(address_params)
 
     if @address.save
@@ -18,7 +18,7 @@ class AddressesController < ApplicationController
   end
   
   def edit 
-    @user = current_user # Assuming you have a `current_user` method
+    @user = current_user 
     @address = @user.addresses.find(params[:id])
   end
   def update
@@ -31,8 +31,6 @@ class AddressesController < ApplicationController
       render :edit
     end
   end
-
-
 
   def destroy
     @user = current_user # Assuming you have a `current_user` method
