@@ -7,7 +7,7 @@ ActiveAdmin.register FoodItem do
   #
   # Uncomment all parameters which should be permitted for assignment
   #
-  permit_params :name, :description, :price, :type, :restaurant_id, :category_id
+  permit_params :name, :description, :type, :price , :restaurant_id, :category_id
   #
   # or
   #
