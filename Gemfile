@@ -75,3 +75,7 @@ gem 'activeadmin'
 gem "pry" 
 gem "image_processing", ">= 1.2"
 
+
+gem "shakapacker", "= 7.1"
+
+gem "react-rails", "= 3.1.1"

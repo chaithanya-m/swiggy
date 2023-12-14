@@ -1,3 +1,4 @@
 <%= render 'homes/header', locations: @locations %>
-<%= render 'homes/restaurants', categories: Category.all , restaurants: @restaurants %>
+<%= react_component("home/Index",{categories: Category.all , restaurants: @restaurants}) %>
+
 

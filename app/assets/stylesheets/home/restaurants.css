@@ -1,0 +1,22 @@
+.body_center{
+  margin-left: 170px;
+  margin-right: 170px;
+  margin-top: 40px;
+}
+
+.horizontal-scroll {
+  width: 100%;
+  white-space: nowrap;
+  overflow: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  
+}
+.horizontal-scroll::-webkit-scrollbar {
+  display: none; /* WebKit browsers (Chrome, Safari) */
+}
+
+.scroll-content {
+  display: inline-block;
+  padding: 10px;
+}
