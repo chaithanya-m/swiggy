@@ -1,4 +1,20 @@
-<%= render 'homes/header', locations: @locations %>
-<%= react_component("home/Index",{categories: Category.all , restaurants: @restaurants}) %>
+<%# <%= render 'homes/header', locations: @locations %> 
+<%= react_component("HederMenu",
+  {
+    
+    user:current_user || nil ,
+    locations: @locations,
+    select_location:session[:location],
+    cart:  current_user && current_user.cart ? current_user.cart.cart_items.count : 0
+  }) 
+%>
+<%= react_component("home/Index",
+  {
+    categories: Category.all , 
+    restaurants: @restaurants
+  }) 
+%>
+<%= render 'homes/restaurants', restaurants: @restaurants,categories: Category.all %>
+
 
 

@@ -1,0 +1,106 @@
+.nav_bar{
+  padding-right: 55px;
+
+  padding-left: 60px;
+	padding-top: 15px;
+  padding-bottom: 15px;
+	position: relative;
+	text-align: center;
+	box-shadow: 0 15px 40px -20px rgba(40,44,63,.15);
+  font-family: ProximaNova,arial,Helvetica Neue,sans-serif;
+}
+.nav_left{
+  padding-left: 15px;
+  /* background-color: red; */
+}
+.nav_right{
+  padding-top: 15px;
+}
+.nav_ll{
+  /* background-color: red; */
+}
+.nav_lr{
+  padding-top: 10px;
+}
+.location{
+  padding-right: 100px;
+	text-align: left;
+  position: relative;
+  padding-left: 10px;
+
+}
+
+.custom-dropdown {
+  position: relative;
+  /* display: inline-block; */
+}
+
+.custom-dropdown select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  background-color: white;
+}
+.custom-dropdown :hover{
+  color: orange;
+}
+.custom-dropdown::before {
+  content: '\25BC'; /* Unicode character for a down arrow */
+  position: absolute;
+  top: 50%;
+  right: 75px;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: orange;
+}
+.location:hover {
+  cursor: pointer;
+}
+.location:hover .area {
+  color: orange;
+}
+.nav_icons{
+  fill: black;
+  margin: 5px;
+}
+.nav_menu{
+  text-align: left;
+}
+
+.a_tag {
+  color: #000;
+  text-decoration: none;
+  padding-left: 29px;
+}
+.a_tag:hover{
+  color: orange;
+}
+.sign_in:hover path{
+  fill:orange;
+  color: orange;
+  cursor: pointer;
+}
+.help:hover path {
+  fill: orange;
+  color: orange;
+  cursor: pointer;
+
+}
+.search:hover path{
+  fill:orange;
+  color: orange;
+  cursor: pointer;
+}
+.offers:hover path{
+  fill:orange;
+  color: orange;
+  cursor: pointer;
+}
+
+
+
+

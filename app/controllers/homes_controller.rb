@@ -3,16 +3,18 @@ class HomesController < ApplicationController
         # binding.pry
 
         @categories = Category.all
-        session[:location] = Address.where(addressable_type: 'Restaurant').pluck(:street_area).uniq.first
+        @locations = Address.where(addressable_type: 'Restaurant').pluck(:street_area).uniq
+        # session[:location] = Address.where(addressable_type: 'Restaurant').pluck(:street_area).uniq.first
         @restaurants = Restaurant.by_street_area(session[:location])
     end
 
     def select_location
         # binding.pry
-        session[:location] = params[:selected_location]
+        session[:location] = params[:location]
         @restaurants = Restaurant.by_street_area(session[:location])
-        render 'index'
-
+        # redirect_to action: 'index'
+        redirect_to root_path
+        
     end
     def filter
         # binding.pry

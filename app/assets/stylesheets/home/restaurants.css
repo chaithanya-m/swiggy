@@ -1,6 +1,6 @@
 .body_center{
-  margin-left: 170px;
-  margin-right: 170px;
+  margin-left: 190px;
+  margin-right: 190px;
   margin-top: 40px;
 }
 
@@ -19,4 +19,24 @@
 .scroll-content {
   display: inline-block;
   padding: 10px;
+}
+.categorie_image{
+  padding: 20px;
+  margin: 15px;
+  text-align: center;
+}
+.arrows{
+  text-align: right;
+}
+.scroll_arrows{
+  margin: 5px;
+  border: none;
+  border-radius: 100%;
+}
+.logo_image{
+  box-shadow: -8px 12px 10px rgba(0, 0, 0, 0.1);
+}
+.categorie{
+  /* margin-top: 10px; */
+  margin-bottom: 30px;
 }
