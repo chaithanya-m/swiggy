@@ -7,5 +7,7 @@ class Address < ApplicationRecord
   def self.ransackable_associations(auth_object = nil)
     ["addressable", "orders"]
   end
+  scope :locations, -> {where(addressable_type: 'Restaurant').pluck(:street_area).uniq }
+
   has_many :orders
 end

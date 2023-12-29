@@ -8,7 +8,7 @@
       "assets": {
         "js": [
           "/packs/js/runtime.js",
-          "/packs/js/vendors-node_modules_mini-css-extract-plugin_dist_hmr_hotModuleReplacement_js-node_modules_re-e46f4c.js",
+          "/packs/js/vendors-node_modules_mini-css-extract-plugin_dist_hmr_hotModuleReplacement_js-node_modules_pr-36a03a.js",
           "/packs/js/app_javascript_components_sync_recursive_.js",
           "/packs/js/application.js"
         ],
@@ -21,7 +21,7 @@
       "assets": {
         "js": [
           "/packs/js/runtime.js",
-          "/packs/js/vendors-node_modules_mini-css-extract-plugin_dist_hmr_hotModuleReplacement_js-node_modules_re-e46f4c.js",
+          "/packs/js/vendors-node_modules_mini-css-extract-plugin_dist_hmr_hotModuleReplacement_js-node_modules_pr-36a03a.js",
           "/packs/js/app_javascript_components_sync_recursive_.js",
           "/packs/js/server_rendering.js"
         ],
@@ -36,10 +36,11 @@
   "js/application.js.map": "/packs/js/application.js.map",
   "js/runtime.js.map": "/packs/js/runtime.js.map",
   "js/server_rendering.js.map": "/packs/js/server_rendering.js.map",
-  "js/vendors-node_modules_mini-css-extract-plugin_dist_hmr_hotModuleReplacement_js-node_modules_re-e46f4c.js": "/packs/js/vendors-node_modules_mini-css-extract-plugin_dist_hmr_hotModuleReplacement_js-node_modules_re-e46f4c.js",
-  "js/vendors-node_modules_mini-css-extract-plugin_dist_hmr_hotModuleReplacement_js-node_modules_re-e46f4c.js.map": "/packs/js/vendors-node_modules_mini-css-extract-plugin_dist_hmr_hotModuleReplacement_js-node_modules_re-e46f4c.js.map",
+  "js/vendors-node_modules_mini-css-extract-plugin_dist_hmr_hotModuleReplacement_js-node_modules_pr-36a03a.js": "/packs/js/vendors-node_modules_mini-css-extract-plugin_dist_hmr_hotModuleReplacement_js-node_modules_pr-36a03a.js",
+  "js/vendors-node_modules_mini-css-extract-plugin_dist_hmr_hotModuleReplacement_js-node_modules_pr-36a03a.js.map": "/packs/js/vendors-node_modules_mini-css-extract-plugin_dist_hmr_hotModuleReplacement_js-node_modules_pr-36a03a.js.map",
   "runtime.js": "/packs/js/runtime.js",
   "server_rendering.css": "/packs/css/server_rendering.css",
   "server_rendering.js": "/packs/js/server_rendering.js",
-  "static/app/assets/images/food.jpg": "/packs/static/app/assets/images/food-413e7cb882342eafdd56.jpg"
+  "static/app/assets/images/food.jpg": "/packs/static/app/assets/images/food-413e7cb882342eafdd56.jpg",
+  "static/app/assets/images/paneer.avif": "/packs/static/app/assets/images/paneer-071a074ff04fabb0d8f3.avif"
 }

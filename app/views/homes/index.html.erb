@@ -10,7 +10,7 @@
 %>
 <%= react_component("home/Index",
   {
-    categories: Category.all , 
+    categories: Category.pluck(:name), 
     restaurants: @restaurants
   }) 
 %>

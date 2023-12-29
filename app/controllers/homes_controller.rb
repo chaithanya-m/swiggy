@@ -3,8 +3,10 @@ class HomesController < ApplicationController
         # binding.pry
 
         @categories = Category.all
-        @locations = Address.where(addressable_type: 'Restaurant').pluck(:street_area).uniq
-        # session[:location] = Address.where(addressable_type: 'Restaurant').pluck(:street_area).uniq.first
+        @locations   = Address.locations
+        if session[:location].nil?
+          session[:location] = @locations.first
+        end
         @restaurants = Restaurant.by_street_area(session[:location])
     end
 
@@ -13,8 +15,8 @@ class HomesController < ApplicationController
         session[:location] = params[:location]
         @restaurants = Restaurant.by_street_area(session[:location])
         # redirect_to action: 'index'
+        # render json: { success: true }.to_json
         redirect_to root_path
-        
     end
     def filter
         # binding.pry
