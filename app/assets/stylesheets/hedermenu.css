@@ -74,15 +74,26 @@
 .a_tag {
   color: #000;
   text-decoration: none;
-  padding-left: 29px;
+
 }
 .a_tag:hover{
   color: orange;
+}
+.sign_in{
+  padding-left: 5px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
 }
 .sign_in:hover path{
   fill:orange;
   color: orange;
   cursor: pointer;
+}
+.help,.offers,.search{
+  padding-left: 20px;
+
 }
 .help:hover path {
   fill: orange;
