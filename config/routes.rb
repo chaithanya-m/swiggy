@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   root "homes#index"
+  get "search" =>"search#index"
   resources :homes, only: [:index] do
     collection do
       get 'filter'
@@ -16,10 +17,12 @@ Rails.application.routes.draw do
   devise_scope :user do
     get "user/profile" => "users#profile",as: "profile_user"
   end
+
   resources :users do
     resources :addresses
   end
-   resources :restaurants
+
+  resources :restaurants
 
   resources :cart_items do
     member do 
@@ -27,8 +30,10 @@ Rails.application.routes.draw do
       post :decrement
     end
   end
+
   resources :orders do
   end
+
   resources :order_items do
   end
 

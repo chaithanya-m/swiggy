@@ -31,7 +31,7 @@
 											</path>
 										</svg>
 									</span>
-									<span><a href="#" class="a_tag">Search</a></span>
+									<span><a href="/search" class="a_tag">Search</a></span>
 								</div>
 								<div class="col-sm-3 offers">
 									<span class="_3yZyp">
@@ -57,9 +57,9 @@
 											</path></svg>
 									</span>
 									<% if user_signed_in? %>
-									  <span class="sign_in" > <%= link_to current_user.email ,profile_user_path %></span>
+									  <span class="sign_in" > <%= link_to current_user.email ,profile_user_path,class: ["a_tag"] %></span>
 										<% else %>
-										<span class="sign_in"> <%= link_to "Sign in" ,new_user_session_path %></span>
+										<span class="sign_in"> <%= link_to "Sign in" ,new_user_session_path, class: ["a_tag"] %></span>
 									<% end %>
 								</div>
 							</div>

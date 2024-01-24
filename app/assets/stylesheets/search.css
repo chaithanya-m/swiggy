@@ -1,0 +1,30 @@
+.search-field{
+  border: 1px solid rgba(40,44,63,.3);
+  border-radius: 1px;
+  /* margin-top: 5px; */
+}
+
+input:focus{
+  border: none;
+  outline: none;
+}
+.serarch-input-field{
+  width: 97%;
+  border: none;
+  padding: 10px 5px;
+  font-weight: bold;
+}
+
+.search-ares{
+  /* background-color: green; */
+  
+}
+.search-icon{
+  
+  font-size:15px;
+  color: #686b78;
+}
+.search-body{
+  margin-top: 50px;
+
+}
