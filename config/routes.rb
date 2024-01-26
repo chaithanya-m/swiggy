@@ -6,7 +6,14 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   root "homes#index"
-  get "search" =>"search#index"
+
+  
+  get 'search', to: 'homes#search'
+  get 'suggestions', to: 'homes#suggestions'
+  get 'search_by', to: 'homes#search_by'
+
+  # get '', to: 'search#search', as: 'search'
+
   resources :homes, only: [:index] do
     collection do
       get 'filter'

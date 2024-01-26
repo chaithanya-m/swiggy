@@ -75,3 +75,4 @@ gem 'activeadmin'
 gem "pry" 
 gem "image_processing", ">= 1.2"
 
+gem 'turbolinks'

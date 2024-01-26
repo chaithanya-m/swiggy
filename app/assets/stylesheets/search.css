@@ -1,7 +1,6 @@
 .search-field{
   border: 1px solid rgba(40,44,63,.3);
-  border-radius: 1px;
-  /* margin-top: 5px; */
+  border-radius: 3px;
 }
 
 input:focus{
@@ -15,10 +14,6 @@ input:focus{
   font-weight: bold;
 }
 
-.search-ares{
-  /* background-color: green; */
-  
-}
 .search-icon{
   
   font-size:15px;

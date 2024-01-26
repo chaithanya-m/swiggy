@@ -6,8 +6,8 @@
       <div class="col-1"></div>
       <div class="col-10 search-field">
         <span>
-          <%= form_with url: root_path, method: :get do |form| %>
-          <%= form.text_field :search, placeholder: 'Search for restaurants and food', class:["serarch-input-field"]%>
+          <%= form_with url: search_by_path, method: :get do |form| %>
+          <%= form.text_field :search, id:"search-bar", placeholder: 'Search for restaurants and food', class:["serarch-input-field"] ,autocomplete:"off"%>
           <span class="icon-magnifier">  <i class="fa fa-search search-icon"></i></span>
           <% end %>
         </span>
@@ -17,11 +17,9 @@
     <div class="row">
       <div class="col-1"></div>
       <div class="col-10">
-        <div class="search-body">
-          <div>
+        <div class="search-body" id="suggestions-container">
+          <div >
             <h6>Recent Searches</h6>
-            <br>
-            <br>
           </div>
           <div>
             <h5>Popular Cuisines</h5>
@@ -31,7 +29,7 @@
               <% end %>
             </div>
           </div>
-      </div>
+        </div>
       <div class="col-1"></div>
 
     </div>
