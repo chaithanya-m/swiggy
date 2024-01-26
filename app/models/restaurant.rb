@@ -14,7 +14,7 @@ class Restaurant < ApplicationRecord
     super + ['address_id']
   end
 
-  scope :by_street_area, ->(location) { joins(:addresses).where(addresses: { street_area: location }).distinct }
+  scope :by_street_area, ->(location) { joins(:address).where(address: { street_area: location }).distinct }
   scope :price_range, ->(min_price, max_price) { joins(:food_items).where('food_items.price >= ? AND food_items.price <= ?', min_price, max_price) }
   scope :below_price, ->(max_price) { joins(:food_items).where('food_items.price <= ?', max_price).distinct }
   scope :newest_first, -> { order(created_at: :desc) }

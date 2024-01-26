@@ -23,7 +23,6 @@ $(document).on('turbolinks:load', function() {
   function displaySuggestions(suggestions) {
     var suggestionsContainer = $('#suggestions-container');
     suggestionsContainer.empty();
-debugger
     if (suggestions.length > 0) {
       suggestions.forEach(function(suggestion) {
         var nameHtml = '<h4>' + suggestion.name + '</h4>';
@@ -34,5 +33,8 @@ debugger
     } else {
       suggestionsContainer.append('<div>No suggestions found</div>');
     }
+  }
+  function clearSuggestions(){
+    
   }
 });
