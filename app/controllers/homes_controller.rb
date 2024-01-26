@@ -5,9 +5,9 @@ class HomesController < ApplicationController
         @restaurants = Restaurant.by_street_area(session[:location])
     end
     
-    def search
-      @categories = Category.all 
-    end
+    # def search
+    #   @categories = Category.all 
+    # end
     def suggestions
       # binding.pry
       restaurant_data =Restaurant.by_street_area(session[:location]).where("name LIKE ?", "%#{params[:query]}%").limit(10).pluck(:id, :name).map { |id, name| { id: id, name: name, table_name: 'restaurant' } }
@@ -19,7 +19,8 @@ class HomesController < ApplicationController
 
     end
 
-    def search_by
+    def search
+      binding.pry
       @categories = Category.all
       case params[:search_by] || 'Restaurants'
       when 'Restaurants'

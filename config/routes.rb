@@ -8,9 +8,9 @@ Rails.application.routes.draw do
   root "homes#index"
 
   
-  get 'search', to: 'homes#search'
+  # get 'search', to: 'homes#search'
   get 'suggestions', to: 'homes#suggestions'
-  get 'search_by', to: 'homes#search_by'
+  get 'search', to: 'homes#search'
 
   # get '', to: 'search#search', as: 'search'
 

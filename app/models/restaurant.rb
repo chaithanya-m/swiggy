@@ -1,5 +1,5 @@
 class Restaurant < ApplicationRecord
-  has_many :addresses, as: :addressable
+  has_one :address, as: :addressable
   has_many :food_items
   has_one  :picture, as: :imageable
 
@@ -9,6 +9,9 @@ class Restaurant < ApplicationRecord
   end
   def self.ransackable_associations(auth_object = nil)
     ["addresses"]
+  end
+  def self.ransackable_attributes(auth_object = nil)
+    super + ['address_id']
   end
 
   scope :by_street_area, ->(location) { joins(:addresses).where(addresses: { street_area: location }).distinct }
