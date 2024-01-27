@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_11_09_154705) do
+ActiveRecord::Schema[7.0].define(version: 2024_01_27_103857) do
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
     t.text "body"
@@ -105,7 +105,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_11_09_154705) do
     t.string "name"
     t.text "description"
     t.decimal "price"
-    t.string "type"
+    t.string "food_type"
     t.integer "restaurant_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

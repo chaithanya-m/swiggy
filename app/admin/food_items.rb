@@ -7,7 +7,7 @@ ActiveAdmin.register FoodItem do
   #
   # Uncomment all parameters which should be permitted for assignment
   #
-  permit_params :name, :description, :type, :price , :restaurant_id, :category_id
+  permit_params :name, :description, :food_type, :price , :restaurant_id, :category_id
   #
   # or
   #
@@ -20,6 +20,7 @@ ActiveAdmin.register FoodItem do
     f.inputs "Food Item Details" do
       f.input :restaurant, as: :select, collection: Restaurant.all.map { |r| [r.name, r.id] }, selected: params[:restaurant_id]
       f.input :category, as: :select, collection: Category.all
+      f.input :food_type, as: :select, collection: ['Veg', 'Non-veg', 'Beverage'] 
       f.input :name
       f.input :description
       f.input :price
