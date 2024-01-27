@@ -8,7 +8,20 @@ ActiveAdmin.register Restaurant do
   # Uncomment all parameters which should be permitted for assignment
   #
   # app/admin/restaurant.rb
-  
+ 
+index do
+  selectable_column
+  column :id
+  column :name
+  column :spaciality
+  column :area
+  column :updated_at
+  actions defaults: true do |resource|
+    # Add a link to the "Add Dish" custom action
+    link_to "Add Dish", new_admin_food_item_path(restaurant_id: resource.id), method: :get
+  end
+end
+
   permit_params :name, :spaciality, :area,
                 address_attributes: [:id, :door_number, :street_area, :city, :state, :zip_code]
 

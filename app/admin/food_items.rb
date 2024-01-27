@@ -16,5 +16,15 @@ ActiveAdmin.register FoodItem do
   #   permitted << :other if params[:action] == 'create' && current_user.admin?
   #   permitted
   # end
+  form do |f|
+    f.inputs "Food Item Details" do
+      f.input :restaurant, as: :select, collection: Restaurant.all.map { |r| [r.name, r.id] }, selected: params[:restaurant_id]
+      f.input :category, as: :select, collection: Category.all
+      f.input :name
+      f.input :description
+      f.input :price
+    end
+    f.actions
+  end 
   
 end

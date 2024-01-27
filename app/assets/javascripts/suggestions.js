@@ -34,7 +34,5 @@ $(document).on('turbolinks:load', function() {
       suggestionsContainer.append('<div>No suggestions found</div>');
     }
   }
-  function clearSuggestions(){
-    
-  }
+ 
 });
