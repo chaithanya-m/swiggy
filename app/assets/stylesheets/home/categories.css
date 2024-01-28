@@ -1,14 +1,9 @@
-
-.main_body{
-  margin-top: 20px;
-  margin-left: 300px;
-  margin-right: 300px;
-}
 .body_center{
   margin-left: 190px;
   margin-right: 190px;
   margin-top: 40px;
 }
+
 .horizontal-scroll {
   width: 100%;
   white-space: nowrap;
@@ -38,8 +33,10 @@
   border: none;
   border-radius: 100%;
 }
-
-p {
-  margin: 0;
-  padding: 0;
+.logo_image{
+  box-shadow: -8px 12px 10px rgba(0, 0, 0, 0.1);
+}
+.categorie{
+  /* margin-top: 10px; */
+  margin-bottom: 30px;
 }

@@ -21,6 +21,7 @@ class AddressesController < ApplicationController
     @user = current_user 
     @address = @user.addresses.find(params[:id])
   end
+
   def update
     @user = current_user
     @address = @user.addresses.find(params[:id])
@@ -42,9 +43,11 @@ class AddressesController < ApplicationController
       redirect_to user_path(@user), alert: 'Failed to delete address.'
     end
   end
+
 private
 
   def address_params
     params.require(:address).permit(:door_number, :street_area, :city, :state, :zipcode,:addressable_type,:addressable_id)
   end
+  
 end

@@ -9,8 +9,8 @@ Rails.application.routes.draw do
 
   
   # get 'search', to: 'homes#search'
-  get 'suggestions', to: 'homes#suggestions'
-  get 'search', to: 'homes#search'
+  get 'suggestions', to: 'restaurants#suggestions'
+  get 'search', to: 'restaurants#search'
 
   # get '', to: 'search#search', as: 'search'
 

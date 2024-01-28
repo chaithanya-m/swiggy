@@ -1,7 +1,6 @@
 ActiveAdmin.register Restaurant do
   remove_filter :food_items, :picture
 
-
   # See permitted parameters documentation:
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
   #
@@ -9,18 +8,17 @@ ActiveAdmin.register Restaurant do
   #
   # app/admin/restaurant.rb
  
-index do
-  selectable_column
-  column :id
-  column :name
-  column :spaciality
-  column :area
-  column :updated_at
-  actions defaults: true do |resource|
-    # Add a link to the "Add Dish" custom action
-    link_to "Add Dish", new_admin_food_item_path(restaurant_id: resource.id), method: :get
+  index do
+    selectable_column
+    column :id
+    column :name
+    column :spaciality
+    column :area
+    column :updated_at
+    actions defaults: true do |resource|
+      link_to "Add Dish", new_admin_food_item_path(restaurant_id: resource.id), method: :get
+    end
   end
-end
 
   permit_params :name, :spaciality, :area,
                 address_attributes: [:id, :door_number, :street_area, :city, :state, :zip_code]
@@ -49,7 +47,6 @@ end
     def create
       @restaurant = Restaurant.new(permitted_params[:restaurant])
       if @restaurant.save
-        # Create associated address using the provided values
         address_params = {
           door_number: params[:restaurant][:address][:door_number],
           street_area: params[:restaurant][:address][:street_area],
