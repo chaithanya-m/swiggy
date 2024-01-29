@@ -1,6 +1,5 @@
 .nav_bar{
   padding-right: 55px;
-
   padding-left: 60px;
 	padding-top: 15px;
   padding-bottom: 15px;
@@ -10,36 +9,25 @@
   font-family: ProximaNova,arial,Helvetica Neue,sans-serif;
 }
 .nav_left{
-  padding-left: 15px;
-  /* background-color: red; */
+  padding-left: 6px;
 }
-.nav_right{
-  padding-top: 15px;
-}
-.nav_ll{
-  /* background-color: red; */
-}
-.nav_lr{
-  padding-top: 10px;
-}
+
 .location{
   padding-right: 100px;
 	text-align: left;
   position: relative;
   padding-left: 10px;
-
 }
-
 .custom-dropdown {
   position: relative;
   /* display: inline-block; */
 }
-
 .custom-dropdown select {
+  background-color: red;
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
-  width: 100%;
+  width: 85%;
   padding: 10px;
   font-size: 16px;
   border: none;
@@ -49,7 +37,7 @@
   color: orange;
 }
 .custom-dropdown::before {
-  content: '\25BC'; /* Unicode character for a down arrow */
+  content: '\25BC'; 
   position: absolute;
   top: 50%;
   right: 75px;
@@ -65,51 +53,58 @@
 }
 .nav_icons{
   fill: black;
-  margin: 5px;
+  color: black;
+  margin-right: 5px;
 }
 .nav_menu{
-  text-align: left;
+  margin-top: 5px;
 }
-
+.search{
+  text-align: right;
+  margin-top: 11px;
+  padding-right: 5px;
+}
+.offers{
+  margin-top: 10px;
+  padding-left: 13px;
+}
+.help{
+  margin-top: 10px;
+  padding-right: 21px;
+}
 .a_tag {
   color: #000;
   text-decoration: none;
+  cursor: pointer;
 
 }
-.a_tag:hover{
+.a_tag:hover  {
   color: orange;
 }
+.a_tag:hover path{
+  fill: orange;
+}
 .sign_in{
-  padding-left: 5px;
+  margin-top: 10px;
+  text-align: left;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+.cart{
+  margin-top: 10px;
+  padding-right: 22px;
+}
+.cart_count{
+  border: solid 1px;
+  padding-right: 5px;
+  padding-left: 5px;
+  font-size: 14px;
+  border-top-left-radius: 7px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 2px;
+  border-bottom-left-radius: 2px;
 
-}
-.sign_in:hover path{
-  fill:orange;
-  color: orange;
-  cursor: pointer;
-}
-.help,.offers,.search{
-  padding-left: 20px;
-
-}
-.help:hover path {
-  fill: orange;
-  color: orange;
-  cursor: pointer;
-
-}
-.search:hover path{
-  fill:orange;
-  color: orange;
-  cursor: pointer;
-}
-.offers:hover path{
-  fill:orange;
-  color: orange;
-  cursor: pointer;
 }
 
 

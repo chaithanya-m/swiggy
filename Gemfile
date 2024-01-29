@@ -75,7 +75,4 @@ gem 'activeadmin',"= 3.2.0 "
 gem "pry" 
 gem "image_processing", ">= 1.2"
 
-
-gem "shakapacker", "= 7.1"
-
-gem "react-rails", "= 3.1.1"
+gem 'turbolinks'

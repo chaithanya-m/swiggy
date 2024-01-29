@@ -1,20 +1,65 @@
 ActiveAdmin.register Restaurant do
   remove_filter :food_items, :picture
 
-
   # See permitted parameters documentation:
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
   #
   # Uncomment all parameters which should be permitted for assignment
   #
-  permit_params :name, :spaciality, :area
-  #
-  # or
-  #
-  # permit_params do
-  #   permitted = [:name, :spaciality, :area]
-  #   permitted << :other if params[:action] == 'create' && current_user.admin?
-  #   permitted
-  # end
+  # app/admin/restaurant.rb
+ 
+  index do
+    selectable_column
+    column :id
+    column :name
+    column :spaciality
+    column :area
+    column :updated_at
+    actions defaults: true do |resource|
+      link_to "Add Dish", new_admin_food_item_path(restaurant_id: resource.id), method: :get
+    end
+  end
+
+  permit_params :name, :spaciality, :area,
+                address_attributes: [:id, :door_number, :street_area, :city, :state, :zip_code]
+
+  form do |f|
+    f.inputs 'Restaurant Details' do
+      f.input :name
+      f.input :spaciality
+      f.input :area
+    end
+
+    f.inputs 'Address Details' do
+      f.semantic_fields_for :address, (f.object.address || f.object.build_address) do |address|
+        address.input :door_number
+        address.input :street_area
+        address.input :city
+        address.input :state
+        address.input :zipcode
+      end
+    end
+
+    f.actions
+  end
+   
+  controller do
+    def create
+      @restaurant = Restaurant.new(permitted_params[:restaurant])
+      if @restaurant.save
+        address_params = {
+          door_number: params[:restaurant][:address][:door_number],
+          street_area: params[:restaurant][:address][:street_area],
+          city: params[:restaurant][:address][:city],
+          state: params[:restaurant][:address][:state],
+          zipcode: params[:restaurant][:address][:zipcode]
+        } 
+        @restaurant.create_address(address_params)
+        redirect_to admin_restaurant_path(@restaurant)
+      else
+        render :new
+      end
+    end
+  end
   
 end

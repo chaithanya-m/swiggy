@@ -1,17 +1,4 @@
-<%= react_component("HederMenu",
-  {
-    
-    user:current_user || nil ,
-    locations: @locations,
-    select_location:session[:location],
-    cart:  current_user && current_user.cart ? current_user.cart.cart_items.count : 0
-  }) 
-%>
-<%= react_component ("restaurants/FoodItems"),{
-	restaurant: @restaurant,
-	food_items:@food_items,
-	item_in_cart: @item_in_cart	
-	} %>
+
 
 <div class="main_body">
 	<div class="restaurant">

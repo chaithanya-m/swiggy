@@ -1,6 +1,6 @@
 class OrderItemsController < ApplicationController
+  
   def create
-    # binding.pry
     if params[:selected_address_id].nil?
       redirect_back(fallback_location: root_path)
     else
@@ -20,10 +20,11 @@ class OrderItemsController < ApplicationController
         @order.total_items= @order.total_items + 1
       end
       if @order.save 
-      @cart_items.destroy_all
+        @cart_items.destroy_all
       end
       UserMailer.with(order: @order ).orderPlaced_email.deliver_later
         redirect_to orders_path
     end
   end
+
 end

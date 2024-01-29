@@ -1,12 +1,4 @@
-<%= react_component("HederMenu",
-  {
-    
-    user:current_user || nil ,
-    locations: @locations,
-    select_location:session[:location],
-    cart:  current_user && current_user.cart ? current_user.cart.cart_items.count : 0
-  }) 
-%>
+
 <% @order_items.each do |order_item| %>
   <h4><%= order_item.food_item.name %></h4>
   <small><%= order_item.food_item.type %></small>
