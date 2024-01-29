@@ -9,8 +9,6 @@ Rails.application.routes.draw do
 
   
   # get 'search', to: 'homes#search'
-  get 'suggestions', to: 'restaurants#suggestions'
-  get 'search', to: 'restaurants#search'
 
   # get '', to: 'search#search', as: 'search'
 
@@ -28,8 +26,14 @@ Rails.application.routes.draw do
   resources :users do
     resources :addresses
   end
+  get '/search', to: 'restaurants#search', as: 'search_restaurants'
 
-  resources :restaurants
+  resources :restaurants do 
+    collection do
+      get 'search'
+      get 'suggestions'
+    end
+  end
 
   resources :cart_items do
     member do 

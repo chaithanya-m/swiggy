@@ -10,11 +10,12 @@ $(document).on('turbolinks:load', function() {
     }
     
     $.ajax({
-      url: '/suggestions',
+      url: '/restaurants/suggestions',
       type: 'GET',
       dataType: 'json',
       data: { query: query },
       success: function(data) {
+        $('#suggestions').html(data)
         displaySuggestions(data);
       }
     });

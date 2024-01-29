@@ -9,7 +9,7 @@ class HomesController < ApplicationController
     @restaurants = Restaurant.by_street_area(session[:location])
   end
     
- 
+  
 
   def select_location
       session[:location] = params[:location]
