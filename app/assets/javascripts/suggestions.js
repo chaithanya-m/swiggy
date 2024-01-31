@@ -1,39 +1,50 @@
-// app/assets/javascripts/suggestions.js
+$(document).ready(function() {
+  // Store the initial content of the suggestions container
+  var suggestionsContainer = $('#suggestions-container');
+  var htmlContent = suggestionsContainer.html();
 
-$(document).on('turbolinks:load', function() {
   $('#search-bar').on('input', function() {
     var query = $(this).val();
 
     if (query.trim() === '') {
-      clearSuggestions();
+      $('#suggestions-container').html(htmlContent);
       return;
     }
-    
+
     $.ajax({
       url: '/restaurants/suggestions',
       type: 'GET',
-      dataType: 'json',
+      dataType: 'html',
       data: { query: query },
       success: function(data) {
-        $('#suggestions').html(data)
-        displaySuggestions(data);
+        $('#suggestions-container').html(data);
+      },
+      error: function(xhr, status, error) {
+        console.error('AJAX request failed:', status, error);
       }
     });
   });
 
-  function displaySuggestions(suggestions) {
-    var suggestionsContainer = $('#suggestions-container');
-    suggestionsContainer.empty();
-    if (suggestions.length > 0) {
-      suggestions.forEach(function(suggestion) {
-        var nameHtml = '<h4>' + suggestion.name + '</h4>';
-        var tableHtml = suggestion.table_name ? '<p>' + suggestion.table_name.toLowerCase() + '</p>' : '';
-        var suggestionHtml = '<div>' + nameHtml + tableHtml + '</div>';
-        suggestionsContainer.append(suggestionHtml);
+  $('#suggestions-container').on('click', '.suggestion', function() {
+    var suggestionId = $(this).data('id');
+    var suggestionName = $(this).find('b').text();
+    var suggestionTableName = $(this).find('small').text();
+// debugger
+    if (suggestionTableName === 'restaurant') {
+      $.ajax({
+        url: '/restaurants/search_by_restaurents',
+        type: 'GET',
+        dataType: 'html',
+        data: {
+          suggestionId: suggestionId
+        },
+        success: function(data) {
+          $('#suggestions-container').html(data);
+        },
+        error: function(xhr, status, error) {
+          console.error('AJAX request failed:', status, error);
+        }
       });
-    } else {
-      suggestionsContainer.append('<div>No suggestions found</div>');
     }
-  }
- 
+  });
 });

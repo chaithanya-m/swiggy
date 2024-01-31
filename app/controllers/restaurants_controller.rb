@@ -32,8 +32,11 @@ class RestaurantsController < ApplicationController
                         .pluck(:id, :name)
                         .map { |id, name| { id: id, name: name, table_name: 'dish' } }
 
-    @data = restaurant_data + dish_data
-    render json: @data
+    @suggestions = restaurant_data + dish_data
+    respond_to do |format|
+      format.html { render 'suggestions' }
+      format.js   # This is for the AJAX request
+    end  
   end
 
   def search
@@ -49,4 +52,12 @@ class RestaurantsController < ApplicationController
     end
   end
 
+  def search_by_restaurents
+    @restaurant = Restaurant.find(params[:suggestionId])
+    
+    respond_to do |format|
+      format.html { render 'search_by_restaurents' }
+      format.js   # This is for the AJAX request
+    end  
+  end
 end

@@ -1,0 +1,14 @@
+<div>
+  <% @suggestions.each do |suggestion|%>
+    <div class="row suggestion" data-id="<%= suggestion[:id] %>">
+      <div class="col-1"></div>
+      <%# <% binding.pry%> 
+      <div class="col-11">
+        <b><%= suggestion[:name]%></b>
+        <br>
+        <small><%= suggestion[:table_name]%></small>
+      </div>
+
+    </div>
+  <% end %>
+</div>
