@@ -29,22 +29,22 @@ $(document).ready(function() {
     var suggestionId = $(this).data('id');
     var suggestionName = $(this).find('b').text();
     var suggestionTableName = $(this).find('small').text();
-// debugger
-    if (suggestionTableName === 'restaurant') {
-      $.ajax({
-        url: '/restaurants/search_by_restaurents',
-        type: 'GET',
-        dataType: 'html',
-        data: {
-          suggestionId: suggestionId
-        },
-        success: function(data) {
-          $('#suggestions-container').html(data);
-        },
-        error: function(xhr, status, error) {
-          console.error('AJAX request failed:', status, error);
-        }
-      });
-    }
+    var endpoint = suggestionTableName === 'restaurant' ? '/restaurants/search_by_restaurents' : '/restaurants/search_by_dish';
+  
+    $.ajax({
+      url: endpoint,
+      type: 'GET',
+      dataType: 'html',
+      data: {
+        suggestionId: suggestionId
+      },
+      success: function(data) {
+        $('#suggestions-container').html(data);
+      },
+      error: function(xhr, status, error) {
+        console.error('AJAX request failed:', status, error);
+      }
+    });
   });
+  
 });

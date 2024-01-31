@@ -54,10 +54,21 @@ class RestaurantsController < ApplicationController
 
   def search_by_restaurents
     @restaurant = Restaurant.find(params[:suggestionId])
-    
     respond_to do |format|
       format.html { render 'search_by_restaurents' }
-      format.js   # This is for the AJAX request
+      format.js   
     end  
+  end
+
+  def search_by_dish
+    @dish = Category.find(params[:suggestionId])
+
+    city = Address.where(street_area: session[:location]).distinct.pluck(:city).last
+    restaurants=Restaurant.joins(:address).where(address:{city: city})
+    @food_items = FoodItem.joins(:restaurant, :category).where(category: { id: 4, restaurants: { id: restaurants.map(&:id) } })
+    respond_to do |format|
+      format.html { render 'search_by_dish' }
+      format.js   
+    end 
   end
 end

@@ -1,0 +1,26 @@
+<div>
+  <div class="row">
+    <% @food_items.each do |item|%>
+    <div class="col-6">
+      <%= link_to (restaurant_path(item.restaurant)) do%>
+      <div>
+        <b><%= item.restaurant.name %></b>
+        <small><%= item.restaurant.area %></small>
+      </div>
+      <% end %>
+      <hr/>
+      <div class="row">
+        <div class="col-9">
+          <h5><%= item.name %></h5>
+          <small><%= item.price%></small>
+        </div>
+        <div class="col-3">
+
+        </div>
+        
+      </div>
+    </div>
+    <% end %>
+  </div>
+
+</div>
