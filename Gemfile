@@ -70,6 +70,7 @@ group :test do
   gem "selenium-webdriver"
 
 end
+
 gem 'devise'
 gem 'activeadmin',"= 3.2.0 "
 gem "pry" 
