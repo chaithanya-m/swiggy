@@ -34,7 +34,7 @@ class RestaurantsController < ApplicationController
 
     @suggestions = restaurant_data + dish_data
     respond_to do |format|
-      format.html { render 'suggestions' }
+      format.html { render 'suggestions', layout: false }
       format.js   # This is for the AJAX request
     end  
   end
