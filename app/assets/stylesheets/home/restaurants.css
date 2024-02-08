@@ -1,9 +1,9 @@
-.restaurant_details{
+.restaurant_details {
   text-align: left;
 }
-.restaurant_image{
+
+.restaurant_image {
+  border-radius: 20px;
   text-align: left;
   width: 231px;
-  border-radius: 20px;
-  
 }

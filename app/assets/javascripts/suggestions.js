@@ -30,7 +30,9 @@ $(document).ready(function() {
     var suggestionName = $(this).find('b').text();
     var suggestionTableName = $(this).find('small').text();
     var endpoint = suggestionTableName === 'restaurant' ? '/restaurants/search_by_restaurents' : '/restaurants/search_by_dish';
-  
+    
+    $("#search-bar").val(suggestionName);
+
     $.ajax({
       url: endpoint,
       type: 'GET',
