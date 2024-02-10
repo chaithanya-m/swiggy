@@ -2,12 +2,6 @@
   text-align: right;
 }
 
-.body_center {
-  margin-left: 190px;
-  margin-right: 190px;
-  margin-top: 40px;
-}
-
 .categorie_image {
   margin: 15px;
   padding: 20px;
@@ -23,7 +17,7 @@
 }
 
 .horizontal-scroll::-webkit-scrollbar {
-  display: none; /* WebKit browsers (Chrome, Safari) */
+  display: none;
 }
 
 .main_body {

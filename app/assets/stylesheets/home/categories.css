@@ -3,9 +3,7 @@
 }
 
 .body_center {
-  margin-left: 190px;
-  margin-right: 190px;
-  margin-top: 40px;
+  margin: 40px 190px  190px;
 }
 
 .categorie {
@@ -27,11 +25,11 @@
 }
 
 .horizontal-scroll::-webkit-scrollbar {
-  display: none; /* WebKit browsers (Chrome, Safari) */
+  display: none; 
 }
 
 .logo_image {
-  box-shadow: -8px 12px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: -8px 12px 10px rgba(0 0 0 / 10%);
 }
 
 .margin_arrows {

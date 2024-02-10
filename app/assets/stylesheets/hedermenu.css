@@ -19,10 +19,8 @@
 
 .cart_count {
   border: solid 1px;
-  border-bottom-left-radius: 2px;
-  border-bottom-right-radius: 2px;
-  border-top-left-radius: 7px;
-  border-top-right-radius: 5px;
+  border-radius: 7px 5px 2px 2px;
+
   font-size: 14px;
   padding-left: 4px;
   padding-right: 4px;
@@ -78,12 +76,9 @@
 }
 
 .nav_bar {
-  box-shadow: 0 15px 40px -20px rgba(40, 44, 63, 0.15);
+  box-shadow: 0 15px 40px -20px rgba(40 44 63 / 15%);
   font-family: ProximaNova, arial, Helvetica Neue, sans-serif;
-  padding-bottom: 15px;
-  padding-left: 60px;
-  padding-right: 55px;
-  padding-top: 15px;
+  padding: 15px 55px 15px 60px;
   position: relative;
   text-align: center;
 }
@@ -95,7 +90,7 @@
 }
 
 .nav_left {
-  padding-left: 6px;
+  margin-left: 6px;
 }
 
 .nav_menu {

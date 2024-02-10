@@ -3,7 +3,7 @@
 }
 
 .search-field {
-  border: 1px solid rgba(40, 44, 63, 0.3);
+  border: 1px solid rgba(40 44 63 / 30%);
   border-radius: 3px;
 }
 

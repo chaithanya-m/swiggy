@@ -1,7 +1,7 @@
 .cart-container {
   background-color: white;
   border-radius: 3px;
-  box-shadow: 6px 4px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 6px 4px 10px rgba(0 0 0 0 / 10%);
   bottom: 24px;
   color: lawngreen;
   margin-left: 5px;
@@ -11,14 +11,13 @@
 }
 
 .description {
-  color: rgba(40, 44, 63, 0.45);
+  color: rgba(40 44 63 / 45%);
   margin-bottom: 0px;
 }
 
 .image {
   border-radius: 5px;
-  box-shadow: 6px 4px 10px rgba(0, 0, 0, 0.1);
-  /* width: auto; */
+  box-shadow: 6px 4px 10px rgba(0 0 0 /10%);
   width: 110px;
 }
 
@@ -28,12 +27,6 @@
 
 .image-container {
   padding: 0px;
-}
-
-.main_body {
-  margin-left: 300px;
-  margin-right: 300px;
-  margin-top: 20px;
 }
 
 .names {
