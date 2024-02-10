@@ -41,6 +41,9 @@ class RestaurantsController < ApplicationController
 
   def search
     @categories = Category.all  
+    temp_array = session[:resent_search] || []
+    session[:resent_search] = temp_array
+
     case params[:search_by] || 'Restaurants'
     when 'Restaurants'
       @restaurants = Restaurant.by_street_area(session[:location]).where('name LIKE ?', "%#{params[:query]}%")          
@@ -53,7 +56,16 @@ class RestaurantsController < ApplicationController
   end
 
   def search_by_restaurents
+    temp_object = session[:recent_search] || {}
     @restaurant = Restaurant.find(params[:suggestionId])
+    unless temp_object.key?(@restaurant.id)
+      temp_object[@restaurant.id] = {
+        id: @restaurant.id,
+        name: @restaurant.name,
+        table_name: 'restaurant'
+      }
+      session[:recent_search] = temp_object
+    end
     respond_to do |format|
       format.html { render 'search_by_restaurents' }
       format.js   
@@ -65,7 +77,7 @@ class RestaurantsController < ApplicationController
 
     city = Address.where(street_area: session[:location]).distinct.pluck(:city).last
     restaurants=Restaurant.joins(:address).where(address:{city: city})
-    @food_items = FoodItem.joins(:restaurant, :category).where(category: { id: 4, restaurants: { id: restaurants.map(&:id) } })
+    @food_items = FoodItem.joins(:restaurant, :category).where(category: { id:@dish.id , restaurants: { id: restaurants.map(&:id) } })
     respond_to do |format|
       format.html { render 'search_by_dish' }
       format.js   

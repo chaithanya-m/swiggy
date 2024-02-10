@@ -32,7 +32,6 @@ $(document).ready(function() {
     var endpoint = suggestionTableName === 'restaurant' ? '/restaurants/search_by_restaurents' : '/restaurants/search_by_dish';
     
     $("#search-bar").val(suggestionName);
-
     $.ajax({
       url: endpoint,
       type: 'GET',
@@ -49,4 +48,9 @@ $(document).ready(function() {
     });
   });
   
+  $('.recent_search').on('click', function() {
+    var query = $(this).find('b').text();
+    $('#search-bar').val(query).trigger('input');
+  });
+
 });
