@@ -6,9 +6,9 @@
       <div class="col-1"></div>
       <div class="col-10 search-field">
         <span>
-          <%= form_with url: suggestions_restaurants_path, method: :get do |form| %>
-          <%= form.text_field :query, id:"search-bar", placeholder: 'Search for restaurants and food', class:["serarch-input-field"] ,autocomplete:"off"%>
-          <span class="icon-magnifier">  <i class="fa fa-search search-icon"></i></span>
+          <%= form_with method: :get, id: "search-form" do |form| %>
+          <%= form.text_field :query, id: "search-bar", placeholder: 'Search for restaurants and food', class: ["serarch-input-field"], autocomplete: "off" %>
+          <span class="icon-magnifier"> <i class="fa fa-search search-icon"></i></span>
           <% end %>
         </span>
       </div>

@@ -26,7 +26,7 @@
           <%= order.address.state %> <br>
           <%= order.address.zipcode %> <br>
         </td>
-				<td> <%= link_to "cancel order", order_path(id:order.id), data: { "turbo-method": :delete }  %></td>
+				<td> <%= link_to "cancel order", order_path(id:order.id), method: :delete  %></td>
 
 			</tr>
 			<% end %>

@@ -25,6 +25,14 @@ $(document).ready(function() {
     });
   });
 
+  $("#search-form").submit(function(e) {
+    e.preventDefault(); // Prevent the default form submission
+    // Your custom logic here
+debugger    // For example, you can access the input value like this:
+    var query = $("#search-bar").val();
+    console.log("Search query: " + query);
+  });
+
   $('#suggestions-container').on('click', '.suggestion', function() {
     var suggestionId = $(this).data('id');
     var suggestionName = $(this).find('b').text();

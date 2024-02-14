@@ -1,7 +1,7 @@
 
 <% @order_items.each do |order_item| %>
   <h4><%= order_item.food_item.name %></h4>
-  <small><%= order_item.food_item.type %></small>
+  <small><%= order_item.food_item.food_type %></small>
   <p><%= order_item.food_item.description %></p>
     <span> <%= order_item.quantity %> </span><span>x</span>
     <span> <%= order_item.item_price %> </span><span>=</span>
