@@ -1,3 +1,3 @@
 //= require jquery
 //= require jquery_ujs
-//= require suggestions
+//= require search

@@ -43,15 +43,29 @@ class RestaurantsController < ApplicationController
     @categories = Category.all  
     temp_array = session[:resent_search] || []
     session[:resent_search] = temp_array
+  end
 
+  def search_by
+    city = Address.where(street_area: session[:location]).distinct.pluck(:city).last
     case params[:search_by] || 'Restaurants'
+
     when 'Restaurants'
-      @restaurants = Restaurant.by_street_area(session[:location]).where('name LIKE ?', "%#{params[:query]}%")          
-      render :search
+      # binding.pry
+      @restaurant = Restaurant.joins(:address).find_by(address: { city: city }, name: params[:query])
+      @restaurants = Restaurant.joins(:address).where(address: { city: city }).where('name LIKE ?', "%#{params[:query]}%")
+      respond_to do |format|
+        format.html { render 'search_by_restaurents' }
+        format.js   
+      end  
     when 'Dishes'
-      restaurants = Restaurant.by_street_area(session[:location]).pluck(:id)
+      # binding.pry
+      # restaurants = Restaurant.by_street_area(session[:location]).pluck(:id)
+      restaurants=Restaurant.joins(:address).where(address:{city: city}).pluck(:id)
       @food_items = FoodItem.where(restaurant_id: restaurants).where("name LIKE ?", "%#{params[:query]}%")
-      render :search
+      respond_to do |format|
+        format.html { render 'search_by_dish' }
+        format.js   
+      end 
     end
   end
 
@@ -74,7 +88,6 @@ class RestaurantsController < ApplicationController
 
   def search_by_dish
     @dish = Category.find(params[:suggestionId])
-
     city = Address.where(street_area: session[:location]).distinct.pluck(:city).last
     restaurants=Restaurant.joins(:address).where(address:{city: city})
     @food_items = FoodItem.joins(:restaurant, :category).where(category: { id:@dish.id , restaurants: { id: restaurants.map(&:id) } })
