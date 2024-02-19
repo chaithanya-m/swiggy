@@ -1,5 +1,5 @@
 ActiveAdmin.register Restaurant do
-  remove_filter :food_items, :picture
+  remove_filter :food_items, :image
 
   # See permitted parameters documentation:
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
@@ -47,12 +47,13 @@ ActiveAdmin.register Restaurant do
     def create
       @restaurant = Restaurant.new(permitted_params[:restaurant])
       if @restaurant.save
+        address_attributes= params[:restaurant][:address]
         address_params = {
-          door_number: params[:restaurant][:address][:door_number],
-          street_area: params[:restaurant][:address][:street_area],
-          city: params[:restaurant][:address][:city],
-          state: params[:restaurant][:address][:state],
-          zipcode: params[:restaurant][:address][:zipcode]
+          door_number: address_attributes[:door_number],
+          street_area: address_attributes[:street_area],
+          city: address_attributes[:city],
+          state: address_attributes[:state],
+          zipcode: address_attributes[:zipcode]
         } 
         @restaurant.create_address(address_params)
         redirect_to admin_restaurant_path(@restaurant)

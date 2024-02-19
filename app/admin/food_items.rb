@@ -1,5 +1,5 @@
 ActiveAdmin.register FoodItem do
-  remove_filter :order_items ,:picture
+  remove_filter :order_items ,:image
   # remove_filter :pictures
 
   # See permitted parameters documentation:

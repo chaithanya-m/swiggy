@@ -5,10 +5,17 @@ ActiveAdmin.register Picture do
   #
   # Uncomment all parameters which should be permitted for assignment
   #
-  filter :imageable_id
 
-  permit_params :image, :imageable_id, :imageable_type
+  permit_params :imageable_id, :imageable_type
   #
+
+  index do
+    id_column
+    # column :imageable_type
+    # column :imageable_id
+    # actions
+  end
+  
   # or
   #
   # permit_params do
