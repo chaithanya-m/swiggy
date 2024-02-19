@@ -1,5 +1,5 @@
 ActiveAdmin.register FoodItem do
-  remove_filter :order_items ,:image
+  remove_filter :order_items ,:picture
   # remove_filter :pictures
 
   # See permitted parameters documentation:
@@ -21,7 +21,7 @@ ActiveAdmin.register FoodItem do
     f.inputs "Food Item Details" do
       f.input :restaurant, as: :select, collection: Restaurant.all.map { |r| [r.name, r.id] }, selected: params[:restaurant_id]
       f.input :category, as: :select, collection: Category.all
-      f.input :food_type, as: :select, collection: ['Veg', 'Non-veg', 'Beverage'] 
+      f.input :food_type, as: :select, collection: ['Veg', 'Non-veg', 'Beverage','Dessert'] 
       f.input :name
       f.input :description
       f.input :price

@@ -1,5 +1,5 @@
 ActiveAdmin.register Restaurant do
-  remove_filter :food_items, :image
+  remove_filter :food_items, :picture
 
   # See permitted parameters documentation:
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters

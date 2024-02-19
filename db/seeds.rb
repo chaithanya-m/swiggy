@@ -11,11 +11,10 @@ if AdminUser.count == 0
 end
 
 
-
 # Create categories
 if Category.count == 0
   puts 'Seeding categories...'
-  categories = ['Biryani', 'Dosa', 'Pizza', 'Burger', 'Pasta', 'Salad', 'Dessert','Idli','ice cream','pure Veg','non-veg']
+  categories = ['Biryani', 'Dosa', 'Pizza', 'Burger', 'Pasta', 'Salad', 'Dessert','Idli','ice cream','pure Veg','Non-Veg','coffee']
   categories.each { |category| Category.create!(name: category) }
 end
 
@@ -38,16 +37,16 @@ restaurants_data = [
   # Add more restaurants as needed
 ]
 food_items_data = [
-  { name: 'Hyderabadi Biryani', description: 'Delicious biryani with aromatic spices', price: 10.99, food_type: 'Non-Vegetarian', category_name: 'Biryani' },
-  { name: 'Masala Dosa', description: 'Crispy dosa with flavorful masala', price: 7.99, food_type: 'Vegetarian', category_name: 'Dosa' },
-  { name: 'Margherita Pizza', description: 'Classic pizza with tomato and mozzarella', price: 12.99, food_type: 'Vegetarian', category_name: 'Pizza' },
-  { name: 'BBQ Burger', description: 'Juicy burger with BBQ sauce', price: 9.99, food_type: 'Non-Vegetarian', category_name:  'Burger' },
-  { name: 'Alfredo Pasta', description: 'Creamy Alfredo pasta with chicken', price: 14.99, food_type: 'Non-Vegetarian', category_name: 'Pasta' },
-  { name: 'Caesar Salad', description: 'Fresh Caesar salad with dressing', price: 8.99, food_type: 'Vegetarian', category_name: 'Salad' },
-  { name: 'Chocolate Brownie', description: 'Rich chocolate brownie with ice cream', price: 6.99, food_type: 'Dessert', category_name: 'Dessert' },
-  { name: 'Iced Coffee', description: 'Refreshing iced coffee with cream', price: 4.99, food_type: 'Beverage', category_name: 'Idli' },
-  { name: 'Veg Sizzler', description: 'Sizzling hot vegetable platter', price: 11.99, food_type: 'Vegetarian', category_name: 'ice cream' },
-  { name: 'Chicken Kebab', description: 'Grilled chicken kebabs with spices', price: 13.99, food_type: 'Non-Vegetarian', category_name: 'pure Veg' },
+  { name: 'Hyderabadi Biryani', description: 'Delicious biryani with aromatic spices', price: 650, food_type: 'Non-Veg', category_name: 'Biryani' },
+  { name: 'Masala Dosa', description: 'Crispy dosa with flavorful masala', price: 100, food_type: 'Veg', category_name: 'Dosa' },
+  { name: 'Margherita Pizza', description: 'Classic pizza with tomato and mozzarella', price: 350, food_type: 'Veg', category_name: 'Pizza' },
+  { name: 'BBQ Burger', description: 'Juicy burger with BBQ sauce', price: 300, food_type: 'Non-Veg', category_name:  'Burger' },
+  { name: 'Alfredo Pasta', description: 'Creamy Alfredo pasta with chicken', price: 400, food_type: 'Non-Veg', category_name: 'Pasta' },
+  { name: 'Caesar Salad', description: 'Fresh Caesar salad with dressing', price: 280, food_type: 'Veg', category_name: 'Salad' },
+  { name: 'Chocolate Brownie', description: 'Rich chocolate brownie with ice cream', price: 100, food_type: 'Dessert', category_name: 'Dessert' },
+  { name: 'Iced Coffee', description: 'Refreshing iced coffee with cream', price: 150, food_type: 'Beverage', category_name: 'coffee' },
+  { name: 'Veg Sizzler', description: 'Sizzling hot vegetable platter', price: 399 , food_type: 'Veg', category_name: 'pure Veg' },
+  { name: 'Chicken Kebab', description: 'Grilled chicken kebabs with spices', price: 150, food_type: 'Non-Veg', category_name: 'Non-Veg' },
   # Add more food items as needed
 ]
 
