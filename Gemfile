@@ -70,9 +70,10 @@ group :test do
   gem "selenium-webdriver"
 
 end
+
 gem 'devise'
 gem 'activeadmin',"= 3.2.0 "
 gem "pry" 
 gem "image_processing", ">= 1.2"
 
-gem 'turbolinks'
+gem 'jquery-rails', '~> 4.6.0'

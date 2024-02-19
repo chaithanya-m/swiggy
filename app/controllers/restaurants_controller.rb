@@ -32,12 +32,18 @@ class RestaurantsController < ApplicationController
                         .pluck(:id, :name)
                         .map { |id, name| { id: id, name: name, table_name: 'dish' } }
 
-    @data = restaurant_data + dish_data
-    render json: @data
+    @suggestions = restaurant_data + dish_data
+    respond_to do |format|
+      format.html { render 'suggestions', layout: false }
+      format.js   # This is for the AJAX request
+    end  
   end
 
   def search
     @categories = Category.all  
+    temp_array = session[:resent_search] || []
+    session[:resent_search] = temp_array
+
     case params[:search_by] || 'Restaurants'
     when 'Restaurants'
       @restaurants = Restaurant.by_street_area(session[:location]).where('name LIKE ?', "%#{params[:query]}%")          
@@ -49,4 +55,32 @@ class RestaurantsController < ApplicationController
     end
   end
 
+  def search_by_restaurents
+    temp_object = session[:recent_search] || {}
+    @restaurant = Restaurant.find(params[:suggestionId])
+    unless temp_object.key?(@restaurant.id)
+      temp_object[@restaurant.id] = {
+        id: @restaurant.id,
+        name: @restaurant.name,
+        table_name: 'restaurant'
+      }
+      session[:recent_search] = temp_object
+    end
+    respond_to do |format|
+      format.html { render 'search_by_restaurents' }
+      format.js   
+    end  
+  end
+
+  def search_by_dish
+    @dish = Category.find(params[:suggestionId])
+
+    city = Address.where(street_area: session[:location]).distinct.pluck(:city).last
+    restaurants=Restaurant.joins(:address).where(address:{city: city})
+    @food_items = FoodItem.joins(:restaurant, :category).where(category: { id:@dish.id , restaurants: { id: restaurants.map(&:id) } })
+    respond_to do |format|
+      format.html { render 'search_by_dish' }
+      format.js   
+    end 
+  end
 end

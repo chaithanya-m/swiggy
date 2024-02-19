@@ -20,12 +20,26 @@
         <div class="search-body" id="suggestions-container">
           <div >
             <h6>Recent Searches</h6>
+            <div>
+              <% session[:recent_search]&.each do |restaurant_id, restaurant_data| %>
+              <div  class = "suggestion"data-id="<%= restaurant_data["id"] %>" >
+                <b hidden><%= restaurant_data["name"] %></b>
+                <span class="icon-magnifier">  <i class="fa fa-search search-icon"></i></span>
+                <span><%= restaurant_data["name"] %></span>
+                <small hidden><%= restaurant_data["table_name"] %></small>
+              </div>
+            <% end %>
+            </div>
           </div>
           <div>
             <h5>Popular Cuisines</h5>
             <div class="horizontal-scroll">
               <% @categories.each do |category| %>
-                <div class="scroll-content"><%= category.name %></div>
+                <div class="scroll-content recent_search" data-id="<%= category.id %>" >
+                  <small hidden >dish</small>
+                  <b hidden><%= category.name %></b>
+                  <p><%= category.name %></p>
+                </div>
               <% end %>
             </div>
           </div>

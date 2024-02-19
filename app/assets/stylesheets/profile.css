@@ -1,26 +1,23 @@
-.profile_body{
-	background-color:#35728a ;
-	padding-left: 20px;
-	padding-right: 20px;
-
+.profile_body {
+  background-color: #35728a;
+  padding-left: 20px;
+  padding-right: 20px;
 }
-.user_details{
-	color: white;
-	padding-left: 50px;
-	padding-right: 50px;
-  padding-top: 55px;
-  padding-bottom: 0px;
+
+.user_details {
   border-bottom-width: 20px;
+  color: white;
   margin-bottom: 45px;
+  padding: 50px 50px 0 50px;
+}
 
+.user_details_left {
+  text-align: right;
 }
-.user_details_left{
-	text-align: right;
-}
-.user_options{
-	background-color: white;
-	margin:0px;
-	padding-left: 50px;
-	padding-top: 50px;
-	padding-bottom: 50px;
+
+.user_options {
+  background-color: white;
+  margin: 0;
+  padding: 50px 0 50px 50px;
+  
 }

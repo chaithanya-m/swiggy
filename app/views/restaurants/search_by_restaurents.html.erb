@@ -1,0 +1,17 @@
+
+<div>
+  <div class="row">
+    <div class="col-6">
+      <%= link_to (restaurant_path(@restaurant)) do%>
+      <div class="row">
+        <div class="col-2"></div>
+        <div class="col-10">
+          <b> <%= @restaurant.name%></b>
+          <p> <%= @restaurant.area%></p>
+          <small><%= @restaurant.spaciality %></small>
+        </div>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>

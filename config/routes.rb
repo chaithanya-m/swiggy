@@ -32,6 +32,8 @@ Rails.application.routes.draw do
     collection do
       get 'search'
       get 'suggestions'
+      get 'search_by_restaurents'
+      get 'search_by_dish'
     end
   end
 

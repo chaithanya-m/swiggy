@@ -1,42 +1,20 @@
 
-.main_body{
-  margin-top: 20px;
-  margin-left: 300px;
-  margin-right: 300px;
-}
-.body_center{
-  margin-left: 190px;
-  margin-right: 190px;
-  margin-top: 40px;
-}
-.horizontal-scroll {
-  width: 100%;
-  white-space: nowrap;
-  overflow: auto;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-  
-}
-.horizontal-scroll::-webkit-scrollbar {
-  display: none; /* WebKit browsers (Chrome, Safari) */
-}
-
-.scroll-content {
-  display: inline-block;
-  padding: 10px;
-}
-.categorie_image{
-  padding: 20px;
+.categorie_image {
   margin: 15px;
+  padding: 20px;
   text-align: center;
 }
-.arrows{
-  text-align: right;
+
+.horizontal-scroll {
+  -ms-overflow-style: none;
+  overflow: auto;
+  scrollbar-width: none;
+  white-space: nowrap;
+  width: 100%;
 }
-.scroll_arrows{
-  margin: 5px;
-  border: none;
-  border-radius: 100%;
+
+.horizontal-scroll::-webkit-scrollbar {
+  display: none;
 }
 
 p {

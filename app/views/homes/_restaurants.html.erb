@@ -33,7 +33,7 @@
   <h4> Restaurants</h4>
   	<div class="row">
   		<% restaurants.each do |restaurant| %> 
-  		<div class="col-4 ">
+  		<div class="col-3 ">
       <%= link_to restaurant_path(restaurant), :action => 'go' do %>
   			<b><%= restaurant.name %></b><br>
   			<%= restaurant.spaciality %><br>

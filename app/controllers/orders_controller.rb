@@ -3,7 +3,6 @@ class OrdersController < ApplicationController
     @orders = current_user.orders 
   end
   def show
-    # binding.pry
     @order = Order.find(params[:id])
 		@order_items = @order.order_items  
   end
