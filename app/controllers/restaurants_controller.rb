@@ -5,7 +5,8 @@ class RestaurantsController < ApplicationController
     @restaurant = Restaurant.find(params[:id])
     @food_items = @restaurant.food_items
 
-    if user_signed_in?
+    if user_signed_in? && current_user.cart
+      
       cart_items = current_user.cart.cart_items || nil
     else
       cart_items =nil

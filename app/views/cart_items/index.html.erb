@@ -33,11 +33,11 @@
 					<div class="row">
 						<div class="col-6"> <%= cart_item.food_item.name %></div>
 						<div class="col-1">
-							<%= link_to "-", decrement_cart_item_path(cart_item.food_item.id), :class => "button",data: { "turbo-method": :post }  %>
+							<%= link_to "-", decrement_cart_item_path(cart_item.food_item.id), :class => "button",method: :post  %>
 						</div>
 						<div class="col-1"><%= cart_item.quantity %></div>
 						<div class="col-1">
-							<%= link_to "+", increment_cart_item_path(cart_item.food_item.id), :class => "button",data: { "turbo-method": :post }  %>
+							<%= link_to "+", increment_cart_item_path(cart_item.food_item.id), :class => "button",method: :post%>
 						</div>
 						<div class="col-3"> Rs.<%= cart_item.quantity.to_i * cart_item.food_item.price.to_i %></div>
 					</div>
