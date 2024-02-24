@@ -24,14 +24,12 @@ $(document).ready(function() {
       }
     });
   });
-
  
-
   $('#suggestions-container').on('click', '.suggestion', function() {
     var suggestionId = $(this).data('id');
     var suggestionName = $(this).find('b').text();
     var suggestionTableName = $(this).find('small').text();
-    var endpoint = suggestionTableName === 'restaurant' ? '/restaurants/search_by_restaurents' : '/restaurants/search_by_dish';
+     suggestionTableName === 'restaurant' ?  searchRestaurants(suggestionName) : endpoint= '/restaurants/search_by_dish';
     
     $("#search-bar").val(suggestionName);
     $.ajax({

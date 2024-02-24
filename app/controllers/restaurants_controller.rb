@@ -50,7 +50,6 @@ class RestaurantsController < ApplicationController
     case params[:search_by] || 'Restaurants'
 
     when 'Restaurants'
-      # binding.pry
       @restaurant = Restaurant.joins(:address).find_by(address: { city: city }, name: params[:query])
       @restaurants = Restaurant.joins(:address).where(address: { city: city }).where('name LIKE ?', "%#{params[:query]}%")
       respond_to do |format|
@@ -72,6 +71,7 @@ class RestaurantsController < ApplicationController
   def search_by_restaurents
     temp_object = session[:recent_search] || {}
     @restaurant = Restaurant.find(params[:suggestionId])
+    
     unless temp_object.key?(@restaurant.id)
       temp_object[@restaurant.id] = {
         id: @restaurant.id,
